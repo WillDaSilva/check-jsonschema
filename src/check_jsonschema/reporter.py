@@ -49,7 +49,7 @@ class TextReporter(Reporter):
         self.stream = stream
 
     def _echo(self, s: str, *, indent: int = 0) -> None:
-        click.echo(" " * indent + s, file=self.stream)
+        click.echo(" " * indent + s, file=self.stream, color=self.color)
 
     def report_success(self) -> None:
         if self.verbosity < 1:
